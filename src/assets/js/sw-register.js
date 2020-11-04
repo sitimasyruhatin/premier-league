@@ -3,7 +3,9 @@ if (!('serviceWorker' in navigator)) {
   console.log('Service worker tidak didukung browser ini.');
 } else {
   registerServiceWorker();
-  requestPermission();
+  setTimeout(() => {
+    requestPermission();
+  }, 2000);
 }
 // Register service worker
 function registerServiceWorker() {
