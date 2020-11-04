@@ -4,7 +4,7 @@ const options = {
 };
 const idLiga = 2021;
 const imgHandler =
-  "this.onerror = null; this.src = '../assets/images/default-logo.svg'";
+  "this.onerror = null; this.src = '../assets/images/default-logo.webp'";
 
 function getStandings(typeStandings) {
   if ('caches' in window) {
@@ -12,9 +12,9 @@ function getStandings(typeStandings) {
       .match(
         `${baseUrl}competitions/${idLiga}/standings?standingType=${typeStandings}`
       )
-      .then(function (response) {
+      .then((response) => {
         if (response) {
-          response.json().then(function (data) {
+          response.json().then((data) => {
             showStandings(data, typeStandings);
           });
         } else {
@@ -81,7 +81,7 @@ function showStandings(data, typeStandings) {
   ).innerHTML = standingsTableHTML;
 
   let itemStandingsHTML = '';
-  data.standings[0].table.forEach(function (data) {
+  data.standings[0].table.forEach((data) => {
     let formHTML = '';
 
     if (data.form) {
@@ -127,22 +127,20 @@ function showStandings(data, typeStandings) {
 
 function getTeams() {
   if ('caches' in window) {
-    caches
-      .match(`${baseUrl}competitions/${idLiga}/teams`)
-      .then(function (response) {
-        if (response) {
-          response.json().then(function (data) {
-            showTeams(data);
-          });
-        } else {
-          axios
-            .get(`${baseUrl}competitions/${idLiga}/teams`, options)
-            .then((response) => {
-              showTeams(response.data);
-            })
-            .catch((error) => console.error(error));
-        }
-      });
+    caches.match(`${baseUrl}competitions/${idLiga}/teams`).then((response) => {
+      if (response) {
+        response.json().then((data) => {
+          showTeams(data);
+        });
+      } else {
+        axios
+          .get(`${baseUrl}competitions/${idLiga}/teams`, options)
+          .then((response) => {
+            showTeams(response.data);
+          })
+          .catch((error) => console.error(error));
+      }
+    });
   } else {
     axios
       .get(`${baseUrl}competitions/${idLiga}/teams`, options)
@@ -161,7 +159,7 @@ function getDetailTeam() {
     if ('caches' in window) {
       caches.match(`${baseUrl}teams/${idParam}`).then(function (response) {
         if (response) {
-          response.json().then(function (data) {
+          response.json().then((data) => {
             showDetailTeam(data);
             resolve(data);
           });
@@ -199,7 +197,7 @@ function showTeams(data) {
     <div class="row container" id="list-team"></div>`;
   document.getElementById('teams').innerHTML = teamsHTML;
   let listTeams = '';
-  data.teams.forEach(function (team) {
+  data.teams.forEach((team) => {
     listTeams += `
         <div class="col s6 m6 l3">
           <div class="card">
@@ -237,7 +235,7 @@ function showDetailTeam(data) {
       </div>
    
       <div class="col s12 m7 l9">
-        <h2>${data.name}</h2>
+        <h4>${data.name}</h4>
         <div class="row">
           <div class="col s12 l7">
             <ul>
@@ -264,14 +262,14 @@ function showDetailTeam(data) {
     </div>
   </header>
   <div class="container">
-    <h4 class="txt-purple center">Squad</h4>
+    <h5 class="txt-purple center"><b>Squad</b></h5>
     <div class="row">
       <div class="col s12" id="squad"></div>
     </div>
   </div>
   `;
 
-  data.squad.forEach(function (data) {
+  data.squad.forEach((data) => {
     dateOfBirth = data.dateOfBirth.split('T');
     let role = data.role.replace(/_/g, ' ');
     squadHTML += `
@@ -282,7 +280,7 @@ function showDetailTeam(data) {
             <h6><b>${data.name ? data.name : '-'}</b></h6>
             <span>${data.position ? data.position : ''}</span>
           </div> 
-          <img src="./src/assets/images/crew.png" class="responsive-img"  onerror=${imgHandler} alt="Team Logo">
+          <img src="./src/assets/images/crew.webp" class="responsive-img"  onerror=${imgHandler} alt="Team Logo">
           </div>
           <div class="card-content">
             <ul class="collection">
@@ -311,7 +309,7 @@ function showDetailTeam(data) {
 }
 
 function getFavoriteTeam() {
-  getAll().then(function (teams) {
+  getAll().then((teams) => {
     let favoriteHTML = `
     <header>
       <div class="row container">
@@ -324,7 +322,7 @@ function getFavoriteTeam() {
     document.getElementById('favorite-team').innerHTML = favoriteHTML;
     if (teams.length > 0) {
       let listFavorite = '';
-      teams.forEach(function (team) {
+      teams.forEach((team) => {
         listFavorite += `
         <div class="col s6 m6 l3">
           <div class="card">

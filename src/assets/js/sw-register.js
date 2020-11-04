@@ -9,18 +9,18 @@ if (!('serviceWorker' in navigator)) {
 function registerServiceWorker() {
   return navigator.serviceWorker
     .register('service-worker.js')
-    .then(function (registration) {
+    .then((registration) => {
       console.log('Registrasi service worker berhasil.');
       return registration;
     })
-    .catch(function (err) {
+    .catch((err) => {
       console.error('Registrasi service worker gagal.', err);
     });
 }
 
 function requestPermission() {
   if ('Notification' in window) {
-    Notification.requestPermission().then(function (result) {
+    Notification.requestPermission().then((result) => {
       if (result === 'denied') {
         console.log('Fitur notifikasi tidak diijinkan.');
         return;
@@ -30,7 +30,7 @@ function requestPermission() {
       }
 
       if ('PushManager' in window) {
-        navigator.serviceWorker.getRegistration().then(function (registration) {
+        navigator.serviceWorker.getRegistration().then((registration) => {
           registration.pushManager
             .subscribe({
               userVisibleOnly: true,
@@ -38,7 +38,7 @@ function requestPermission() {
                 'BF8iIRBhLjpEDx2S32XdlndjL5-Id1v7E1LFB2uVghlSIUBpX1NL7IkuWmFTkZJHlD4EgD8atJHy9Oqd9ep2sQ8'
               ),
             })
-            .then(function (subscribe) {
+            .then((subscribe) => {
               console.log(
                 'Berhasil melakukan subscribe dengan endpoint: ',
                 subscribe.endpoint
@@ -62,7 +62,7 @@ function requestPermission() {
                 )
               );
             })
-            .catch(function (e) {
+            .catch((e) => {
               console.error('Tidak dapat melakukan subscribe ', e.message);
             });
         });

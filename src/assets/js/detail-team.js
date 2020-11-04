@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   setTimeout(() => {
     let item = getDetailTeam();
-    item.then(function (data) {
+    item.then((data) => {
       getDataDB(data);
     });
   }, 2000);
@@ -10,17 +10,17 @@ document.addEventListener('DOMContentLoaded', function () {
 function getDataDB(data) {
   let btnFavorite = document.getElementById('favorite-btn');
 
-  getById(data.id).then(function (dataDB) {
+  getById(data.id).then((dataDB) => {
     if (dataDB) {
       btnFavorite.classList.add('active');
-      btnFavorite.onclick = function () {
+      btnFavorite.onclick = () => {
         btnFavorite.classList.toggle('active');
         console.log('Tombol Hapus di klik.');
         deleteFavoriteTeam(dataDB.id);
         getDataDB(data);
       };
     } else {
-      btnFavorite.onclick = function () {
+      btnFavorite.onclick = () => {
         console.log('Tombol Favorite di klik.');
         createFavoriteTeam(data);
         getDataDB(data);

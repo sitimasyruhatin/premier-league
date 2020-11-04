@@ -17,7 +17,7 @@ function loadNav() {
       if (this.status !== 200) return;
 
       // Muat daftar tautan menu
-      document.querySelectorAll('.topnav, .sidenav').forEach(function (elm) {
+      document.querySelectorAll('.topnav, .sidenav').forEach((elm) => {
         elm.innerHTML = xhttp.responseText;
       });
 
@@ -50,10 +50,10 @@ function loadPage(page) {
         content.innerHTML = xhttp.responseText;
       } else if (this.status === 404) {
         content.innerHTML =
-          '<div class="error"><img src="../src/assets/images/404.png"> <h4>Halaman tidak ditemukan</h4></div>';
+          '<div class="error"><img src="../src/assets/images/404.webp"> <h4>Halaman tidak ditemukan</h4></div>';
       } else {
         content.innerHTML =
-          '<div class="error"><img src="../src/assets/images/warning.png"> <h4>Halaman tidak dapat diakses</h4></div>';
+          '<div class="error"><img src="../src/assets/images/warning.webp"> <h4>Halaman tidak dapat diakses</h4></div>';
       }
       if (page === 'home') {
         setTimeout(() => {

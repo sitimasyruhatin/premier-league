@@ -13,11 +13,11 @@ webPush.setVapidDetails(
 );
 var pushSubscription = {
   endpoint:
-    'https://fcm.googleapis.com/fcm/send/cPHgnMyrdfQ:APA91bEH8h5yycJa0butWPMrJN9ccLOgYVS10khoEEph7b4hUFtpLAe7ylwcFg_S6ZWRPV27tU-U8gsSILu-OCaH3LWs_NhHUDINPDtm6WfDDbqVjWOpNkIrpz7weNh6AuPtxJO7l0al',
+    'https://fcm.googleapis.com/fcm/send/cRkF5SmEp8o:APA91bF2TEegSkwrxAVBAqYJ6wIdLWdJszJeVKSA4yabPcFvVfWLmtX1omsbwhD_S9gj0l5it5lNLOc6V2xErgEtGuGKYGEXEg8Z9_VmCqib6k2VXkMOO76SBpdRXEOAHuuCDqUOl3B9',
   keys: {
     p256dh:
-      'BLdxdwZnIQJsGrl5SWC4KE04UB3zzj3alkCqhB3OmDf6VxGsUZxymmvPnU96UxFopTEE2GvEvahrnljl1WWmdmI=',
-    auth: 'LsNUf1vCCCtvNFuykm7XhQ==',
+      'BAyAjP9ase4l7XL+/JKmKk7d9L17b1V8gKAA5ZUOAeLT+FV/x65a0HYJ5nCP1VGurgGWv3Ou8kUeJdbObl36n5o=',
+    auth: 'jjO9tW078SDfqHPWPrGXeA==',
   },
 };
 var payload = 'MU : 2 vs EVE : 3 ';

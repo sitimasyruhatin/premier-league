@@ -44,7 +44,7 @@ section#detail-team header,
 section#teams header,
 section#favorite-team header {
   background-color: #3F1052;
-  background-image: url(../images/heading.svg);
+  background-image: url(../images/heading.webp);
   background-size: cover;
   color: #EBEBEB;
   padding: 3rem 0;

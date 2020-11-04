@@ -11,18 +11,18 @@ document.addEventListener('DOMContentLoaded', function () {
       standingsHome = document.getElementById('tabHome');
       standingsAway = document.getElementById('tabAway');
 
-      standingsTotal.onclick = function () {
+      standingsTotal.onclick = () => {
         typeStandings = 'TOTAL';
         getStandings(typeStandings);
       };
-      standingsHome.onclick = function () {
+      standingsHome.onclick = () => {
         typeStandings = 'HOME';
         getStandings(typeStandings);
       };
-      standingsAway.onclick = function () {
+      standingsAway.onclick = () => {
         typeStandings = 'AWAY';
         getStandings(typeStandings);
       };
-    }, 100);
+    }, 1000);
   }
 });
