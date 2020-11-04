@@ -6,8 +6,6 @@ if (workbox) {
   workbox.core.setCacheNameDetails({
     prefix: 'premiere-league',
   });
-  // workbox.skipWaiting();
-  // workbox.clientsClaim();
   console.log(`Workbox berhasil dimuat`);
 } else {
   console.log(`Workbox gagal dimuat`);

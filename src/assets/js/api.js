@@ -8,7 +8,6 @@ const imgHandler =
 
 function getStandings(typeStandings) {
   if ('caches' in window) {
-    console.log('masuk cache');
     caches
       .match(
         `${baseUrl}competitions/${idLiga}/standings?standingType=${typeStandings}`
@@ -31,7 +30,6 @@ function getStandings(typeStandings) {
         }
       });
   } else {
-    console.log('gak masuk cache');
     axios
       .get(
         `${baseUrl}competitions/${idLiga}/standings?standingType=${typeStandings}`,
@@ -161,7 +159,6 @@ function getDetailTeam() {
     const idParam = urlParams.get('id');
 
     if ('caches' in window) {
-      console.log('masuk cache detail');
       caches.match(`${baseUrl}teams/${idParam}`).then(function (response) {
         if (response) {
           response.json().then(function (data) {
@@ -179,7 +176,6 @@ function getDetailTeam() {
         }
       });
     } else {
-      console.log('gak masuk cache detail');
       axios
         .get(`${baseUrl}teams/${idParam}`, options)
         .then((response) => {
