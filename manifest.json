@@ -1,0 +1,30 @@
+{
+  "name": "Premier League",
+  "short_name": "Premier League",
+  "description": "Aplikasi info bola",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#3F1052",
+  "gcm_sender_id": "614304657531",
+  "icons": [
+    {
+    "src": "/src/assets/images/icon-512x512.png",
+    "sizes": "512x512",
+    "type": "image/png",
+    "purpose" : "any"
+  },
+  {
+    "src": "/src/assets/images/icon-192x192.png",
+    "sizes": "192x192",
+    "type": "image/png",
+    "purpose" : "any"
+  },
+  {
+    "src": "/src/assets/images/maskable_icon.png",
+    "sizes": "718x718",
+    "type": "image/png",
+    "purpose": "maskable"
+  }]
+
+}
