@@ -14,17 +14,28 @@ function getDataDB(data) {
     if (dataDB) {
       btnFavorite.classList.add('active');
       btnFavorite.onclick = () => {
-        btnFavorite.classList.toggle('active');
+        getAnimated();
+        btnFavorite.classList.remove('active');
         console.log('Tombol Hapus di klik.');
         deleteFavoriteTeam(dataDB.id);
         getDataDB(data);
       };
     } else {
       btnFavorite.onclick = () => {
+        getAnimated();
+        btnFavorite.classList.add('active');
         console.log('Tombol Favorite di klik.');
         createFavoriteTeam(data);
         getDataDB(data);
       };
     }
+    setTimeout(function () {
+      btnFavorite.classList.remove('animate__animated', 'animate__heartBeat');
+    }, 1000);
   });
+}
+
+function getAnimated() {
+  document.getElementById('favorite-btn').className =
+    'animate__animated animate__heartBeat';
 }

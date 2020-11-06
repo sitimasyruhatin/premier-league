@@ -4,7 +4,7 @@ const options = {
 };
 const idLiga = 2021;
 const imgHandler =
-  "this.onerror = null; this.src = '../assets/images/default-logo.webp'";
+  "this.onerror = null; this.src = '../assets/images/image-default.webp'";
 
 function getStandings(typeStandings) {
   if ('caches' in window) {
